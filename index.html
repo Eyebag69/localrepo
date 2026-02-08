@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="icon" type="image/png" href="https://thumbs.dreamstime.com/z/blue-calculator-rounded-buttons-featuring-numbers-basic-functions-display-shows-number-soft-curved-design-mix-386755508.jpg?ct=jpeg">
+    <style>
+        body {
+            font-family: Arial;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #ffffff;
+        }
+        .calculator {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #aaa;
+        }
+        input, select, button {
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+        }    
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <h2>Basic Calculator</h2>
+        <input id="num1" type="number" placeholder="Enter first number">
+        <br>
+
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">x</option>
+            <option value="/">÷</option>
+        </select>
+        <br>
+        
+        <input id="num2" type="number" placeholder="Enter second number">
+        <br>
+
+        <button onclick="calculate()">calculate</button>
+        <h3 id="result">Result: </h3>
+    </div>
+    
+    <script>
+        function calculate() {
+            let number1 = parseFloat(document.getElementById('num1').value);
+            let number2 = parseFloat(document.getElementById('num2').value);
+            let operator = document.getElementById('operator').value;
+            let result;
+
+            if (operator === '+') {
+                result = number1 + number2;    
+            } else if (operator === '-') {
+                result = number1 - number2;
+            } else if (operator === '*') {
+                result = nuumber1 * number2;
+            } else if (operator === '/') {
+                result = number2 !==0 ? number1 /number2 : 'Cannot divide by 0';
+            } else { 
+                result = 'Invalid Operation';
+            }
+             
+            document.getElementById('result').innerText = "Result:" + result;
+        }
+    </script>
+</body>
+</html>
